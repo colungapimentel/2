@@ -1,0 +1,93 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+const services = [
+  {
+    title: "Primera Consulta",
+    description: "Evaluación completa y plan personalizado para alcanzar tus objetivos de salud.",
+    price: "$500 MXN",
+    features: [
+      "Evaluación inicial detallada",
+      "Análisis de la dieta",
+      "Plan nutricional personalizado",
+      "Evaluación de composición corporal"
+    ]
+  },
+  {
+    title: "Consultas Posteriores",
+    description: "Seguimiento y ajustes a tu plan nutricional para asegurar resultados.",
+    price: "$350 MXN",
+    features: [
+      "Seguimiento de progreso",
+      "Ajustes al plan nutricional",
+      "Nuevas mediciones",
+      "Recomendaciones actualizadas"
+    ]
+  }
+];
+
+const conditions = [
+  "Obesidad",
+  "Diabetes",
+  "Hipertensión",
+  "Enfermedades cardiovasculares",
+  "Trastornos alimentarios"
+];
+---
+
+<section class="py-16" id="services">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-primary text-center mb-12">Servicios</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      {services.map(service => <ServiceCard {...service} />)}
+    </div>
+
+    <div class="bg-light p-8 rounded-lg mt-12">
+      <h3 class="text-2xl font-bold text-primary mb-6">En la asesoría nutricional revisaremos:</h3>
+      <ul class="space-y-4">
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-secondary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Evaluación inicial completa y detallada</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-secondary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Análisis de la dieta y establecimiento de objetivos</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-secondary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Plan nutricional con menús personalizados</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-secondary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Evaluación de la composición corporal</span>
+        </li>
+        <li class="flex items-start">
+          <svg class="w-6 h-6 text-secondary mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Asesoramiento sobre estilo de vida</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-primary mb-6">Condiciones que tratamos</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {conditions.map(condition => (
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <p class="text-center text-lg">{condition}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

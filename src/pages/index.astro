@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import LocationSection from '../components/LocationSection.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Footer from '../components/Footer.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+
+const title = "María Ávila - Nutrióloga Profesional en Zacatecas";
+const description = "Nutrióloga profesional especializada en planes de alimentación personalizados. Más de 10 años de experiencia. Cédula Profesional: 13184857. ¡Agenda tu consulta hoy!";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <section class="bg-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Transforma tu vida con una nutrición personalizada</h1>
+            <p class="text-xl mb-6">Especialista en planes de alimentación personalizados para alcanzar tus objetivos de salud</p>
+            <div class="space-x-4">
+              <a
+                href="#contact"
+                class="inline-block bg-secondary text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-colors"
+              >
+                Agenda tu consulta
+              </a>
+              <SocialLinks />
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img
+              src="/images/banner-nutriologa.webp"
+              alt="Nutrióloga María Ávila Zacatecas"
+              class="rounded-lg shadow-xl"
+              width="600"
+              height="400"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AboutSection />
+    <ServicesSection />
+    <LocationSection />
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>

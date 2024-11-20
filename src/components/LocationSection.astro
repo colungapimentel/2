@@ -1,0 +1,35 @@
+---
+const locations = [
+  {
+    city: "Zacatecas",
+    address: "Centro Avanti, edificio La Curva Calle la Unión 108. Col. Centro",
+    postalCode: "98000",
+    state: "Zacatecas"
+  },
+  {
+    city: "Estado de México",
+    address: "Cerro de la Malinche #250, Col. La Joya",
+    postalCode: "54020",
+    state: "México"
+  }
+];
+---
+
+<section class="py-16 bg-light" id="location">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-primary text-center mb-12">Ubicaciones</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {locations.map(location => (
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-primary mb-4">{location.city}</h3>
+          <address class="not-italic">
+            <p class="mb-2">{location.address}</p>
+            <p>CP: {location.postalCode}</p>
+            <p>{location.state}</p>
+          </address>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
